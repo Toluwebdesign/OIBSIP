@@ -1,0 +1,1391 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  color: #111111;
+  margin: 0;
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at top left, rgba(30, 144, 255, 0.08), transparent 24%),
+    linear-gradient(135deg, #f7f9fc 0%, #eef2f7 100%);
+  background-attachment: fixed;
+}
+
+/* NAVBAR */
+nav {
+  background-color: rgb(1, 1, 41);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 28px;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav ul li a:hover {
+   color: #1E90FF;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 70px clamp(24px, 5vw, 100px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.06);
+}
+
+.hero-text {
+  max-width: 500px;
+  font-size: clamp(0.98rem, 1.9vw, 1.17rem);
+}
+
+.hero-text h1 {
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+  line-height: 1.2;
+  margin: 12px 0 16px;
+}
+
+.hero-buttons .get-in-touch,
+.hero-buttons .view-portfolio,
+.get-in-touch,
+.get-in-touch2,
+.view-portfolio,
+.contact-button {
+  padding: 10px 16px;
+  border-radius: 50px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.18);
+  transition: all 0.3s ease;
+}
+
+.get-in-touch:hover, .get-in-touch2:hover, .view-portfolio:hover, .contact-button:hover {
+  transform: translateY(-3px) scale(1.05); /* Move up and scale up */
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.get-in-touch:active, .get-in-touch2:active, .view-portfolio:active, .contact-button:active {
+  transform: translateY(1px) scale(0.98); /* Move down and scale down */
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3);
+}
+
+.get-in-touch2 {
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+
+.name {
+  display: block;
+  margin-left: 50px;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  align-items: center; /* ensure buttons align vertically */
+}
+
+/* Nudge the primary hero Download CV button up slightly for visual alignment */
+/* (reverted) previously nudged hero Download CV button; default spacing restored */
+
+.hero-buttons a {
+  text-decoration: none;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pic {
+  width: min(280px, 42vw);
+  height: min(280px, 42vw);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+}
+
+.line1 {
+  margin-top: 30px;
+}
+
+.line {
+  width: 76%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.quote {
+  font-style: italic;
+  margin-top: 20px;
+  color: #000;
+  margin-left: 170px;
+}
+
+/* INTRO SECTION */
+.intro {
+  margin-top: 50px;
+  padding: 0 24px;
+}
+
+.intro-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.intro-content {
+  flex: 1 1 560px;
+  min-width: min(100%, 560px);
+}
+
+.about-highlight-card {
+  flex: 0 1 300px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 20px 22px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.about-highlight-card h3 {
+  margin: 0 0 10px;
+  color: #1E90FF;
+  font-size: 1.08rem;
+}
+
+.about-highlight-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.square {
+  width: 10px;
+  height: 10px;
+  background-color: #0878e9;
+  margin-top: 38px;
+  border-radius: 2px;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.intro h2, .approach-style h2, .featured-works h2, .benefits h2, .contact-me h2, .skills h2 {
+  margin-left: 20px;
+  margin-top: 30px;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.intro-info {
+  font-size: clamp(1.45rem, 2.5vw, 2.1rem);
+  font-weight: 600;
+  margin-left: 20px;
+  margin-top: 20px;
+  color: #0f172a;
+  max-width: 620px;
+}
+
+.about-description {
+  max-width: 700px;
+}
+
+.name2 {
+  margin-left: 70px;
+}
+
+.intro-story {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 24px;
+  margin: 40px auto 0;
+}
+
+.copyright, .copyright2 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 25px;
+}
+
+.copyright2 {
+  margin-left: 900px;
+}
+
+.experiences, .collaboration {
+  width: min(100%, 420px);
+  min-height: 140px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.experiences p, .collaboration p {
+  color: #475569;
+  margin: 0;
+}
+
+.approach-style {
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.square-container {
+  display: flex;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cards h2 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.cards h3 {
+  margin-top: 24px;
+  margin-left: 10px;
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+
+.card1 {
+  margin-left: 0;
+}
+
+.card1, .card2, .card3 {
+  background-color: #ffffff;
+  flex: 1 1 280px;
+  max-width: 360px;
+  min-height: 380px;
+  padding: 22px 20px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.cards p {
+  line-height: 1.7;
+  color: #6c727c;
+  width: auto;
+  margin-left: 10px;
+  font-size: 0.95rem;
+}
+
+.card-number {
+  display: flex;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  background-color: #1E90FF;
+  border-radius: 50px;
+  margin-right: 5px;
+}
+
+.circle2-01, .circle3-01, .circle4-01 {
+  background-color: #d0d2d6;
+}
+
+.circle3-02, .circle4-02 {
+  background-color: #d0d2d6;
+}
+
+.circle4-03 {
+  background-color: #d0d2d6;
+}
+
+.circles {
+  display: flex;
+  margin-left: 200px;
+  margin-top: 40px;
+}
+
+.portfolio {
+  font-size: 15px;
+  color: #1E90FF;
+  background-color: #e2e0e0;
+  width: 100px ;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.portfolio {
+  display: flex;
+}
+
+.portfolio img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.featured-works h1 {
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  text-align: center;
+  font-weight: 700;
+  margin: 24px 0 10px;
+}
+
+.top-projects {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.portfolio-text {
+  max-width: 700px;
+  margin: 0 auto 24px;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.view-portfolio {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin: 30px auto;
+  padding: 0 24px;
+  max-width: 1200px;
+}
+
+.portfolio-cards a {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.portfolio-cards img {
+  width: 100%;
+  height: 220px;
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+
+.portfolio-cards h2 {
+  color: #1E90FF;
+}
+
+.portfolio-card1, .portfolio-card2, .portfolio-card3 {
+  margin-right: 0;
+  background-color: #ffffff;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0 0 20px;
+  min-height: auto;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.portfolio-cards h2, .portfolio-cards p {
+  width: auto;
+  margin-left: 20px;
+}
+
+.portfolio-card1:hover, .portfolio-card2:hover, .portfolio-card3:hover {
+  transform: translateY(-3px) scale(1.05);
+  cursor: pointer;
+  box-shadow: 5px 5px 5px #295c8f;
+}
+
+.benefits {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.benefit-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.benefit-card {
+  background: white;
+  padding: 25px;
+  width: min(100%, 300px);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card h3 {
+  color: #1E90FF;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.benefits h2 {
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 80px;
+  padding: 0 30px;
+}
+
+/* LEFT SIDE */
+.contact-me {
+  flex: 1; /* take equal space */
+  max-width: 45%;
+}
+
+.contact-me h2 {
+  white-space: nowrap;
+}
+
+.contact-me h3 {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  max-width: 760px;
+}
+
+.contact-text {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.contact-button {
+  margin: 0; /* normalize spacing with sibling buttons */
+}
+
+/* RIGHT SIDE */
+.contact-form {
+  flex: 1; /* take equal space */
+  max-width: 45%;
+  margin-top: 150px;
+}
+
+/* FORM STYLING */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #eaeaf0;
+  color: #141414;
+  font-size: 15px;
+}
+
+/* MESSAGE BOX (fixes text wrapping + placeholder) */
+.message {
+  height: 150px;
+  resize: none;
+  line-height: normal;
+}
+
+/* SUBMIT BUTTON */
+.submit {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.connect {
+  margin-top: 50px;
+  background-color: #eef0f3;
+  margin-right: 30px;
+  margin-left: 30px;
+  border-radius: 10px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.connect-with-me {
+  color: #807e7e;
+  font-weight: bold;
+  font-size: 47px;
+  margin-bottom: 0;
+}
+
+.connect-up {
+  margin: 0; /* reset margin so container spans full available width */
+  display: flex;
+  gap: 40px; /* spacing between columns */
+  align-items: flex-start;
+  justify-content: space-between; /* push links to far right */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40px; /* keep inner padding from container edges */
+}
+
+.links {
+  margin-left: 0; /* spacing handled by .connect-up gap */
+  margin-top: 50px;
+}
+
+.links-line {
+  border: none;
+  background-color: rgb(168, 166, 166);
+  height: 1px;
+  width: 240px;
+  margin: 10px 0;
+}
+
+.links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.links ul li {
+  line-height: 30px;
+}
+
+.links ul li a:hover {
+  color: #000;
+}
+
+.links a {
+  text-decoration: none;
+  color: #3b3b3b;
+  font-weight: bold;
+}
+
+.connect-text {
+  width: min(100%, 320px);
+  max-width: 320px;
+}
+
+.email {
+  font-size: 40px;
+  font-weight: bold;
+  color: #111111;
+  margin-top: 0;
+  text-decoration: underline;
+  width: min(100%, 320px);
+  max-width: 320px;
+}
+
+.line {
+  border: none;
+  background-color: rgb(168, 166, 166);
+  height: 2px;
+  width: 1200px;
+}
+
+.contact-button {
+  margin-top: 0; /* ensure Download CV aligns with sibling button */
+}
+
+/* Ensure buttons inside the contact area are vertically centered */
+.contact-section .hero-buttons {
+  align-items: center;
+}
+
+.connect-middle {
+  display: flex;
+}
+
+.connect-name {
+  font-weight: 1000;
+  font-size: 80px;
+  margin-left: 30px;
+}
+
+.flower {
+  width: 550px;
+  height: 150px;
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-top: 30px; /* nudge the flower down a bit */
+}
+
+.copyright {
+  margin-left: 10px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.uiux-projects{
+    padding:80px 60px;
+}
+
+.uiux-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.uiux-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.uiux-card:hover{
+    transform:translateY(-8px);
+}
+
+.uiux-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.uiux-card-content{
+    padding:25px;
+}
+
+.uiux-card h3{
+    margin-top:0;
+    color:#1E90FF;
+}
+
+.uiux-card p{
+    color:#555;
+    line-height:1.7;
+}
+
+.project-links{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.project-btn{
+    text-decoration:none;
+    background:#1E90FF;
+    color:white;
+    padding:10px 18px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.project-btn:hover{
+    background:#005fd4;
+}
+
+.project-btn.secondary{
+    background:#111;
+}
+
+.resume-section{
+    padding:80px 60px;
+    text-align:center;
+}
+
+.resume-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.resume-box h2{
+    margin-top:0;
+}
+
+.resume-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 35px;
+    background:#1E90FF;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:bold;
+}
+
+.skills-section{
+    padding:80px 60px;
+}
+
+.skills-section .square-container h2 {
+    margin-top: 30px;
+    margin-left: 20px;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:40px;
+}
+
+.skill-card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.skill-card h3{
+    color:#1E90FF;
+    margin-bottom:15px;
+}
+
+.social-links{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.social-links a{
+    text-decoration:none;
+    color:white;
+    background:#1E90FF;
+    padding:12px 20px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.social-links a:hover{
+    background:#005fd4;
+}
+
+.uiux-projects,
+.skills-section,
+.resume-section{
+    padding:40px 20px;
+}
+
+.resume-box{
+    padding:25px;
+}
+
+.project-links{
+    flex-direction:column;
+}
+
+.project-btn{
+    text-align:center;
+}
+
+/* =============================================
+   RESPONSIVE LAYOUT
+   Consolidated breakpoints — replaces old patches
+============================================= */
+
+/* Flexible elements should be allowed to shrink */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body, main, section, nav, footer, form,
+.hero, .intro-layout, .intro-content, .contact-section,
+.contact-me, .contact-form, .connect, .connect-up,
+.connect-text, .connect-middle {
+  min-width: 0;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+p, h1, h2, h3, a, li, label, button {
+  overflow-wrap: break-word;
+}
+
+.line {
+  width: min(100% - 32px, 1200px);
+  max-width: 100%;
+}
+
+/* Large tablets and smaller laptops */
+@media (max-width: 1024px) {
+  .hero {
+    gap: 28px;
+    padding: 56px 36px;
+  }
+
+  .hero-text {
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+
+  .hero-image {
+    flex: 0 1 300px;
+    max-width: 300px;
+  }
+
+  .pic {
+    width: min(240px, 100%);
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .cards {
+    padding: 0 20px;
+  }
+
+  .card1, .card2, .card3 {
+    flex: 1 1 260px;
+    max-width: 100%;
+  }
+
+  .circles {
+    margin-left: auto;
+  }
+
+  .contact-section {
+    gap: 28px;
+  }
+
+  .contact-me,
+  .contact-form {
+    flex: 1 1 calc(50% - 14px);
+    max-width: calc(50% - 14px);
+  }
+
+  .contact-me h2 {
+    white-space: normal;
+  }
+
+  .contact-me h3 {
+    font-size: clamp(2.4rem, 5.5vw, 3.75rem);
+  }
+
+  .contact-form {
+    margin-top: 80px;
+  }
+
+  .connect-up {
+    gap: 28px;
+    padding: 0 28px;
+  }
+
+  .connect-name {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    margin-left: 20px;
+  }
+
+  .flower {
+    width: min(48%, 550px);
+    height: auto;
+    object-fit: contain;
+    margin-left: 20px;
+  }
+
+  .copyright2 {
+    margin-left: 0;
+  }
+
+  .uiux-projects,
+  .skills-section,
+  .resume-section {
+    padding: 60px 30px;
+  }
+}
+
+/* Tablets and phones */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    padding: 42px 24px;
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 620px;
+    font-size: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.65rem, 5.5vw, 2.35rem);
+    line-height: 1.2;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 230px;
+    flex: 0 1 auto;
+  }
+
+  .pic {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .hero-buttons,
+  .hero-links {
+    justify-content: center;
+  }
+
+  .name,
+  .name2,
+  .quote,
+  .copyright2 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .intro,
+  .approach-style,
+  .featured-works,
+  .benefits,
+  .skills-section,
+  .uiux-projects,
+  .resume-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .intro-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .intro-content,
+  .about-highlight-card {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .intro-content {
+    min-width: 0;
+  }
+
+  .intro-info {
+    margin-left: 0;
+    font-size: clamp(1.25rem, 4.2vw, 1.8rem);
+  }
+
+  .intro-story {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 20px;
+  }
+
+  .experiences,
+  .collaboration {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  .approach-style {
+    margin-top: 56px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 20px;
+  }
+
+  .card1, .card2, .card3 {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  .card-number {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .circles {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .benefit-cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .benefit-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .portfolio-cards {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 20px;
+  }
+
+  .portfolio-card1,
+  .portfolio-card2,
+  .portfolio-card3 {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .portfolio-cards img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .contact-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    margin-top: 56px;
+    padding: 0 20px;
+  }
+
+  .contact-me,
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .contact-me h2 {
+    white-space: normal;
+  }
+
+  .contact-me h3 {
+    max-width: 100%;
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.12;
+    margin-bottom: 20px;
+  }
+
+  .contact-text {
+    margin-bottom: 24px;
+  }
+
+  .contact-form {
+    margin-top: 0;
+  }
+
+  .contact-form form {
+    width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .connect {
+    margin: 32px 12px;
+    padding: 28px 18px;
+  }
+
+  .connect-with-me {
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+    line-height: 1.2;
+  }
+
+  .connect-up {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .connect-text,
+  .email {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .email {
+    font-size: clamp(1.15rem, 4.8vw, 1.8rem);
+    overflow-wrap: anywhere;
+  }
+
+  .links {
+    width: 100%;
+    margin: 12px 0 0;
+  }
+
+  .links-line {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .connect-middle {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .connect-name {
+    max-width: 100%;
+    margin: 12px 0;
+    font-size: clamp(2rem, 8vw, 3.4rem);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  .flower {
+    display: block;
+    width: min(100%, 420px);
+    max-width: 100%;
+    height: auto;
+    margin: 16px auto 0;
+  }
+
+  .copyright,
+  .copyright2 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .uiux-grid,
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  nav {
+    padding: 16px 14px;
+  }
+
+  nav .logo {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  nav ul {
+    gap: 9px 13px;
+  }
+
+  nav ul li a {
+    font-size: 0.82rem;
+  }
+
+  .hero {
+    padding: 32px 16px;
+  }
+
+  .hero-text {
+    font-size: 0.95rem;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.5rem, 7vw, 1.85rem);
+  }
+
+  .pic {
+    width: 175px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons a,
+  .hero-buttons button,
+  .hero-buttons .get-in-touch,
+  .hero-buttons .get-in-touch2,
+  .hero-buttons .view-portfolio {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-links {
+    gap: 8px 12px;
+    font-size: 0.82rem;
+  }
+
+  .intro,
+  .approach-style,
+  .featured-works,
+  .benefits,
+  .skills-section,
+  .uiux-projects,
+  .resume-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .intro h2,
+  .approach-style h2,
+  .featured-works h2,
+  .benefits h2,
+  .skills h2,
+  .contact-me h2 {
+    margin-left: 0;
+    font-size: 1.1rem;
+  }
+
+  .intro-info {
+    font-size: clamp(1.15rem, 5.5vw, 1.4rem);
+  }
+
+  .intro-story,
+  .cards,
+  .portfolio-cards {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .cards h2 {
+    font-size: clamp(1.5rem, 7vw, 1.9rem);
+  }
+
+  .portfolio-cards h2,
+  .portfolio-cards p {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .top-projects {
+    font-size: 1rem;
+  }
+
+  .contact-section {
+    padding: 0 16px;
+  }
+
+  .contact-me h3 {
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
+  }
+
+  .connect {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 24px 14px;
+  }
+
+  .connect-with-me {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+  }
+
+  .email {
+    font-size: clamp(1rem, 4.8vw, 1.25rem);
+  }
+
+  .connect-name {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .resume-box {
+    padding: 22px 16px;
+  }
+
+  .skill-card,
+  .uiux-card-content {
+    padding: 20px;
+  }
+}
