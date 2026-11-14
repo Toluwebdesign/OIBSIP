@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Explore Toluwani Excellence's web development, UI design, and branding projects.">
+
+  <title>Projects | Toluwani Excellence</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #f7f9fc 0%, #eef2f7 100%);
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: rgb(1, 1, 41);
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #60a5fa;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 55px 24px 80px;
+    }
+
+    .hero {
+      margin-bottom: 55px;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(30, 144, 255, 0.12);
+      color: #1d4ed8;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      color: rgb(1, 1, 41);
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: #64748b;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .section-heading {
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      color: rgb(1, 1, 41);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #e5eaf2;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.11);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background: #e8edf5;
+    }
+
+    .project-card-content {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .project-type {
+      color: #1d4ed8;
+      background: #eff6ff;
+      border-radius: 20px;
+      padding: 5px 11px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .project-card h3 {
+      color: rgb(1, 1, 41);
+      font-size: 1.12rem;
+    }
+
+    .project-card p {
+      color: #64748b;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      padding: 10px 17px;
+      border-radius: 999px;
+      background: #1e90ff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .project-link:hover {
+      background: #1477d6;
+    }
+
+    .practice-section {
+      margin-top: 85px;
+    }
+
+    .practice-section .project-card img {
+      height: 190px;
+    }
+
+    .footer {
+      background: rgb(1, 1, 41);
+      color: #cbd5e1;
+      text-align: center;
+      padding: 25px 16px;
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 22px;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .page {
+        padding: 38px 17px 60px;
+      }
+
+      .hero {
+        margin-bottom: 40px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card img {
+        height: 210px;
+      }
+
+      .practice-section {
+        margin-top: 65px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a class="brand" href="index.html">Toluwani.</a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="hero">
+      <p class="eyebrow">My Portfolio</p>
+
+      <h1>Projects that reflect my growth in design, coding and creativity.</h1>
+
+      <p>
+        Welcome to my project collection. Here you'll find websites,
+        design concepts and practical experiments that showcase my
+        journey in front-end development, UI design and branding.
+        Each project represents an opportunity to learn, experiment
+        and turn ideas into meaningful digital experiences.
+      </p>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+
+    <section class="featured-section">
+
+      <div class="section-heading">
+        <h2>Featured Projects</h2>
+        <p>A selection of projects I've worked on using different tools and technologies.</p>
+      </div>
+
+      <div class="project-grid">
+
+        <!-- WANDERLUST -->
+
+        <article class="project-card">
+          <img src="images/wanderlust.png" alt="Wanderlust Travel Agency website preview">
+
+          <div class="project-card-content">
+            <span class="project-type">React · Tailwind CSS</span>
+
+            <h3>Wanderlust Travel Agency</h3>
+
+            <p>
+              A collaborative travel agency website built with React
+              and Tailwind CSS. The project features tour packages,
+              testimonials, package filtering and a responsive layout.
+            </p>
+
+            <a class="project-link"
+               href="https://github.com/Toluwebdesign/Travel-Agency---Group-C.git"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Group Project
+            </a>
+          </div>
+        </article>
+
+        <!-- PLANORA -->
+
+        <article class="project-card">
+          <img src="images/planora.png" alt="Planora student productivity landing page preview">
+
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+
+            <h3>Planora – Student Productivity</h3>
+
+            <p>
+              A student productivity landing page designed to introduce
+              a platform for organising tasks, managing priorities
+              and making room for what matters.
+            </p>
+
+            <a class="project-link"
+               href="https://github.com/Toluwebdesign/OIBSIP.git"
+               target="_blank"
+               rel="noopener noreferrer">
+              View on GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- CAMPUSCONNECT -->
+
+        <article class="project-card">
+          <img src="images/campusconnect.png" alt="CampusConnect Student Community Hub website preview">
+
+          <div class="project-card-content">
+            <span class="project-type">Web Design · HTML · CSS</span>
+
+            <h3>CampusConnect</h3>
+
+            <p>
+              A Student Community Hub website created to bring
+              university students together through a welcoming,
+              organised and responsive digital experience.
+            </p>
+
+            <a class="project-link"
+               href="https://campusconnect-students.netlify.app/"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Live Project
+            </a>
+          </div>
+        </article>
+
+        <!-- ELORA -->
+
+        <article class="project-card">
+          <img src="images/elora.png" alt="Elora e-commerce website preview">
+
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS · JavaScript</span>
+
+            <h3>Elora E-commerce Website</h3>
+
+            <p>
+              A responsive e-commerce website featuring a product
+              showcase, clean layouts and interactive elements.
+            </p>
+
+            <a class="project-link"
+               href="https://elora-ecommerce-site.netlify.app/"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Live Project
+            </a>
+          </div>
+        </article>
+
+        <!-- GLOWNEST -->
+
+        <article class="project-card">
+          <img src="images/glownest.png" alt="GlowNest brand identity design preview">
+
+          <div class="project-card-content">
+            <span class="project-type">Figma · Branding</span>
+
+            <h3>GlowNest Brand Identity</h3>
+
+            <p>
+              A visual identity concept for a fictional skincare brand,
+              including logo design, typography, colour palette,
+              moodboard and brand guidelines.
+            </p>
+
+            <a class="project-link"
+               href="https://www.figma.com/design/sNnKKNkur1Ct9NutubvUpb/Untitled?t=U9mQgnGuUc6tNd08-1"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Design
+            </a>
+          </div>
+        </article>
+
+        <!-- BAKERY -->
+
+        <article class="project-card">
+          <img src="images/bakery.png" alt="Bakery website preview">
+
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+
+            <h3>Bakery Website</h3>
+
+            <p>
+              A modern bakery website featuring warm colours,
+              thoughtful layouts and responsive styling.
+            </p>
+
+            <a class="project-link"
+               href="Bakery Website/index.html"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Project
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PRACTICE PROJECTS -->
+
+    <section class="practice-section">
+
+      <div class="section-heading">
+        <h2>More Experiments & Practice</h2>
+
+        <p>
+          Smaller projects and exercises that helped me strengthen
+          my HTML, CSS, layout, accessibility and styling skills.
+        </p>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <img src="images/Accessibility Quiz.png" alt="Accessibility Quiz preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Accessibility Quiz</h3>
+            <p>A quiz interface built while practising accessible page structure and form elements.</p>
+            <a class="project-link" href="Accessibility Quiz/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Balance Sheet.png" alt="Balance Sheet preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Balance Sheet</h3>
+            <p>A structured financial layout created to practise tables and CSS styling.</p>
+            <a class="project-link" href="Balance sheet/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Cafe Menu.png" alt="Cafe Menu preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Cafe Menu</h3>
+            <p>A simple menu layout focused on typography, spacing and visual hierarchy.</p>
+            <a class="project-link" href="Cafe Menu/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Cat Painting.png" alt="Cat Painting preview">
+          <div class="project-card-content">
+            <span class="project-type">CSS</span>
+            <h3>Cat Painting</h3>
+            <p>A CSS illustration created by layering shapes and styling individual elements.</p>
+            <a class="project-link" href="Cat painting/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Colored Markers.png" alt="Colored Markers preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Colored Markers</h3>
+            <p>A styling exercise exploring colours, gradients and visual presentation.</p>
+            <a class="project-link" href="Colored Markers/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Multipage Website.png" alt="Multipage Website preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Multipage Website</h3>
+            <p>A multi-page website exercise focused on navigation and content organisation.</p>
+            <a class="project-link" href="Multipage Website/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Nutrition Label.png" alt="Nutrition Label preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Nutrition Label</h3>
+            <p>An informational layout practising structured content and typography.</p>
+            <a class="project-link" href="Nutrition Label/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Photo Gallery.png" alt="Photo Gallery preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Photo Gallery</h3>
+            <p>A responsive image gallery exploring CSS Grid and image presentation.</p>
+            <a class="project-link" href="Photo Gallery/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Piano.png" alt="Piano project preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Piano</h3>
+            <p>A piano interface exercise focused on positioning and responsive styling.</p>
+            <a class="project-link" href="Piano/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Registration Form.png" alt="Registration Form preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Registration Form</h3>
+            <p>A form-building exercise practising input fields, labels and form structure.</p>
+            <a class="project-link" href="Registration form/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Rothko Painting.png" alt="Rothko Painting preview">
+          <div class="project-card-content">
+            <span class="project-type">CSS</span>
+            <h3>Rothko Painting</h3>
+            <p>A CSS art exercise exploring shapes, borders and visual composition.</p>
+            <a class="project-link" href="Rothko painting/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Survey Form.png" alt="Survey Form preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Survey Form</h3>
+            <p>A form interface created to practise user input and page structure.</p>
+            <a class="project-link" href="Survey form/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Tribute Page.png" alt="Tribute Page preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Tribute Page</h3>
+            <p>A content-focused page exploring readability and information hierarchy.</p>
+            <a class="project-link" href="Tribute page/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Website.png" alt="Website project preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Website</h3>
+            <p>An early multi-section webpage practising basic layout and content organisation.</p>
+            <a class="project-link" href="website/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Website Design.png" alt="Website Design preview">
+          <div class="project-card-content">
+            <span class="project-type">Web Design</span>
+            <h3>Website Design</h3>
+            <p>A design exercise exploring page layout, spacing and visual balance.</p>
+            <a class="project-link" href="Website Design/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/Netflik.png" alt="Netflik website preview">
+          <div class="project-card-content">
+            <span class="project-type">HTML · CSS</span>
+            <h3>Netflix Homepage Clone</h3>
+            <p>A homepage recreation exercise focused on layout, styling and visual structure.</p>
+            <a class="project-link" href="Netflik/index.html" target="_blank" rel="noopener noreferrer">Open Project</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Toluwani Excellence. Designed & Developed with care.</p>
+    <p><a href="contact.html">Let's connect</a></p>
+  </footer>
+
+</body>
+</html>
